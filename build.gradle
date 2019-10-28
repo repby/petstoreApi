@@ -16,4 +16,5 @@ dependencies {
     testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.3.0'
     compileOnly 'org.projectlombok:lombok:1.18.10'
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    implementation 'com.github.javafaker:javafaker:1.0.1'
 }
