@@ -21,4 +21,4 @@ Windows
 ```server.url``` - optional parameter (https://petstore.swagger.io/v2 is used by default)
 
 ### To view test report
-Open ./build/reports/tests/test/index.html file in browser.
+Open ./build/reports/tests/test/index.html file in the browser.
