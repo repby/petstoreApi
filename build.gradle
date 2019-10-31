@@ -11,10 +11,27 @@ repositories {
     mavenCentral()
 }
 
+task petManipulations(type: Test) {
+    useJUnitPlatform {
+        excludeTags 'Order'
+    }
+}
+task orderManipulations(type: Test){
+    useJUnitPlatform{
+        excludeTags 'Pet'
+    }
+}
+test {
+    useJUnitPlatform {
+    }
+    systemProperties System.properties
+}
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
     testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.3.0'
     compileOnly 'org.projectlombok:lombok:1.18.10'
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
     implementation 'com.github.javafaker:javafaker:1.0.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
 }

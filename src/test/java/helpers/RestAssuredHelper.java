@@ -8,7 +8,11 @@ import io.restassured.specification.ResponseSpecification;
 
 public class RestAssuredHelper {
     public RestAssuredHelper(){
-        RestAssured.baseURI = "https://petstore.swagger.io/v2";
+        String url = System.getProperty("server.url");
+        if(url==null) {
+            url="https://petstore.swagger.io/v2";
+        }
+        RestAssured.baseURI = url;
     }
 
     public RequestSpecification requestSpec() {
