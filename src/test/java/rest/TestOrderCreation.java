@@ -19,6 +19,6 @@ public class TestOrderCreation extends RestApiTestBase {
         Pet createdPet = createPetWithId(petId);
         int orderId = placeOrderToBuyAPet(createdPet.getId()).getInt("id");
         JsonPath order = getOrderById(orderId);
-        assertEquals(order.getString("status"), PLACED.toString());
+        assertEquals(PLACED.toString(), order.getString("status"));
     }
 }
